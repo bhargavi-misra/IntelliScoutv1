@@ -8,7 +8,12 @@ class Browser:
         with sync_playwright() as p:
 
             browser = p.chromium.launch(
-                headless=True
+                headless=True,
+                args=[
+                    "--no-sandbox",
+                    "--disable-setuid-sandbox",
+                    "--disable-dev-shm-usage",
+                ],
             )
 
             page = browser.new_page(
@@ -25,14 +30,12 @@ class Browser:
             )
 
             try:
-
                 page.wait_for_load_state(
                     "networkidle",
                     timeout=10000,
                 )
 
             except TimeoutError:
-
                 print(
                     "Network idle timed out. Falling back to DOMContentLoaded..."
                 )
