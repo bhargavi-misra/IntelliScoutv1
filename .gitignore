@@ -1,9 +1,30 @@
+# Python
 .venv/
-.env
 __pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Environment
+.env
+
+# Runtime data
 cache/
 exports/
+logs/
+
+# Frontend
 frontend/node_modules/
 frontend/.next/
+
+# Database
 *.db
 *.sqlite3
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
