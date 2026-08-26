@@ -4,7 +4,7 @@
 
 IntelliScout is an AI-assisted web extraction agent. Give it a URL and describe what you want in natural language (*"product name, price and rating"*, *"internship title, company, location and stipend"*), and it returns clean, structured JSON — exportable to CSV.
 
-Live demo: [intelli-scoutv1.vercel.app](https://intelli-scoutv1.vercel.app)
+Live demo: [intelli-scoutv1.vercel.app](https://intelli-scoutv1-lypcjxvot-bhargavii.vercel.app/)
 
 ---
 
