@@ -4,7 +4,6 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-# Linux dependencies for Playwright
 RUN apt-get update && apt-get install -y \
     wget curl git \
     libnss3 \
@@ -31,12 +30,8 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Install Chromium
 RUN python -m playwright install chromium
-RUN python -m playwright install-deps chromium
 
 COPY . .
 
-# Render provides $PORT dynamically
-CMD sh -c "uvicorn app.api.main:app --host 0.0.0.0 --port ${PORT}"
+CMD ["sh","-c","uvicorn app.api.main:app --host 0.0.0.0 --port ${PORT}"]
